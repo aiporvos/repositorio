@@ -1,32 +1,11 @@
-# Etapa de construcción
-FROM node:20-alpine AS build
-
-WORKDIR /app
-
-# Borramos caché de npm anterior y aseguramos un entorno limpio
-RUN npm cache clean --force
-
-# Copiamos solo los archivos de dependencias
-COPY package*.json ./
-
-# Instalamos usando ci (Clean Install) para mayor consistencia en builds de Docker
-# o npm install con banderas de seguridad si ci falla
-RUN npm install --legacy-peer-deps
-
-# Copiamos el resto de los archivos
-COPY . .
-
-# Compilamos la aplicación 
-# (el comando build ya corre tsc y vite build)
-RUN npm run build
-
-# Etapa de producción
+# Dockerfile ultra-rápido: solo servimos la carpeta dist ya construida
 FROM nginx:stable-alpine
 
-# Copiamos solo los archivos compilados resultantes
-COPY --from=build /app/dist /usr/share/nginx/html
+# Copiamos la carpeta dist local (ya generada en mi entorno) directamente a nginx 
+# Así tu servidor NO tiene que descargar node_modules ni ocupar espacio en el build
+COPY dist /usr/share/nginx/html
 
-# Copiamos la configuración de Nginx para SPAs
+# Copiamos la configuración de Nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
