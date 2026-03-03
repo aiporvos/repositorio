@@ -8,6 +8,8 @@ const apps = [
     tagline: "Crea tu Influencer Digital con IA Generativa",
     url: "https://influencer.aiporvos.com/",
     github: "https://github.com/aiporvos/influencer",
+    promptUrl: "https://docs.google.com/document/d/12aYTQJK73zLgIqDSyLebvkfc9o8qpESn7x7t2e4p_0Y/edit?usp=drive_link",
+    imagesUrl: "https://drive.google.com/drive/folders/1lad84kcpNlxTD9oMAfAYf6pjfiVOcjo7?usp=drive_link",
     color: "#7c3aed",
     gradient: "linear-gradient(135deg, #7c3aed, #a855f7)",
     description: "Plataforma web para generar contenido multimedia de influencers digitales (imágenes y videos) usando IA generativa. El usuario sube fotos del personaje, escenario y producto, y la IA produce el contenido listo para redes sociales.",
@@ -204,6 +206,20 @@ export default function App() {
               borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 600,
               backdropFilter: "blur(4px)", border: "1px solid rgba(255,255,255,0.3)"
             }}>📂 GitHub</a>
+            {(app as any).promptUrl && (
+              <a href={(app as any).promptUrl} target="_blank" rel="noreferrer" style={{
+                background: "rgba(255,255,255,0.15)", color: "#fff", padding: "8px 16px",
+                borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 600,
+                backdropFilter: "blur(4px)", border: "1px solid rgba(255,255,255,0.3)"
+              }}>📝 Prompt de muestra</a>
+            )}
+            {(app as any).imagesUrl && (
+              <a href={(app as any).imagesUrl} target="_blank" rel="noreferrer" style={{
+                background: "rgba(255,255,255,0.15)", color: "#fff", padding: "8px 16px",
+                borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 600,
+                backdropFilter: "blur(4px)", border: "1px solid rgba(255,255,255,0.3)"
+              }}>🖼️ Imágenes de muestra</a>
+            )}
             {(app as any).whatsapp && (
               <a href={`https://wa.me/54${(app as any).whatsapp}`} target="_blank" rel="noreferrer" style={{
                 background: "rgba(255,255,255,0.2)", color: "#fff", padding: "8px 16px",
