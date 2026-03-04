@@ -9,7 +9,7 @@ const apps = [
     url: "https://influencer.aiporvos.com/",
     github: "https://github.com/aiporvos/influencer",
     promptUrl: "https://docs.google.com/document/d/12aYTQJK73zLgIqDSyLebvkfc9o8qpESn7x7t2e4p_0Y/edit?usp=drive_link",
-    imagesUrl: "https://drive.google.com/drive/folders/1lad84kcpNlxTD9oMAfAYf6pjfiVOcjo7?usp=drive_link",
+    imagesUrl: "https://drive.google.com/drive/u/1/folders/1FDXnOlEZTufw2MF0m8Nuo1VyL_vVJQrU?usp=drive_link",
     color: "#7c3aed",
     gradient: "linear-gradient(135deg, #7c3aed, #a855f7)",
     description: "Plataforma web para generar contenido multimedia de influencers digitales (imágenes y videos) usando IA generativa. El usuario sube fotos del personaje, escenario y producto, y la IA produce el contenido listo para redes sociales.",
