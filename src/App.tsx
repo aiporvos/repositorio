@@ -218,7 +218,7 @@ export default function App() {
                 background: "rgba(255,255,255,0.15)", color: "#fff", padding: "8px 16px",
                 borderRadius: 8, textDecoration: "none", fontSize: 12, fontWeight: 600,
                 backdropFilter: "blur(4px)", border: "1px solid rgba(255,255,255,0.3)"
-              }}>🖼️ Imágenes de muestra</a>
+              }}>🖼️ Recursos</a>
             )}
             {(app as any).whatsapp && (
               <a href={`https://wa.me/54${(app as any).whatsapp}`} target="_blank" rel="noreferrer" style={{
